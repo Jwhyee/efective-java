@@ -1,4 +1,4 @@
-package item1;
+package chapter2.item1;
 
 public class StaticCalcImpl implements StaticCalc {
     static final double PI = 3.14;

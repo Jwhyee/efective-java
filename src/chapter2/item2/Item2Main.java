@@ -1,6 +1,6 @@
-package item2;
+package chapter2.item2;
 
-import static item2.Pizza.Topping.*;
+import static chapter2.item2.Pizza.Topping.*;
 
 public class Item2Main {
     public static void main(String[] args) {

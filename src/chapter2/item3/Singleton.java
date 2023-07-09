@@ -1,4 +1,4 @@
-package item3;
+package chapter2.item3;
 
 public class Singleton {
     public static final Singleton INSTANCE = new Singleton();

@@ -167,14 +167,14 @@ public abstract class Pizza {
 구체 클래스(concrete class)이므로 구체 빌더를 갖게 하였다.
 
 ```java
-import static item2.Pizza.Topping.*;
 
-NyPizza newYorkPizza = new NyPizza.Builder(NyPizza.Size.SMALL)
+
+NyPizza newYorkPizza=new NyPizza.Builder(NyPizza.Size.SMALL)
         .addTopping(SAUSAGE)
         .addTopping(ONION)
         .build();
 
-CalzonePizza calzonePizza = new CalzonePizza.Builder()
+        CalzonePizza calzonePizza=new CalzonePizza.Builder()
         .addTopping(HAM)
         .sauceInside()
         .build();

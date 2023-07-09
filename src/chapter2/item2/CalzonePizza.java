@@ -1,6 +1,4 @@
-package item2;
-
-import java.util.Objects;
+package chapter2.item2;
 
 public class CalzonePizza extends Pizza {
     private final boolean sauceInside;

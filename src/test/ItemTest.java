@@ -1,6 +1,6 @@
 package test;
 
-import item3.Singleton;
+import chapter2.item3.Singleton;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
