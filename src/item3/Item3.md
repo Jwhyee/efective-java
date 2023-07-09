@@ -1,14 +1,8 @@
 # private 생성자나 열거 타입으로 싱글톤임을 보증하라
 
-## 싱글톤이란?
-
-> 인스턴스를 오직 하나만 생성할 수 있는 클래스를 말한다.
-
 ## 싱글톤을 생성하는 방법
 
 ### public static final 필드 방식의 싱글톤
-
-> 리플렉션 API 중 `AccessibleObject.setAccessible`을 사용해 `private` 생성자를 호출할 수 있음.
 
 ```java
 public class Singleton {
@@ -44,8 +38,6 @@ public class Main {
 </center>
 
 ### 정적 팩토리 방식의 싱글톤
-
-> 리플렉션 API 중 `AccessibleObject.setAccessible`을 사용해 `private` 생성자를 호출할 수 있음.
 
 ```java
 public class Singleton {
@@ -141,6 +133,11 @@ Singleton instance = Singleton.INSTANCE;
 이를 막기 위해서는 `syncronized`를 통해 멀티스레드 환경에서 동시에 접근하지 못하도록 해야한다.
 
 ## 단점
+
+### 리플렉션 공격
+
+1번, 2번 방식은 리플렉션 API 중 `AccessibleObject.setAccessible`을 사용해 `private` 생성자를 호출해 공격 당할 수 있다..
+이러한 공격을 방어하려면 생성자를 수정하여 두 번째 객체가 생성되려할 때 예외를 던지게 하면 된다.
 
 ### 테스트 이슈
 
