@@ -1,6 +1,6 @@
 package chapter2.item1;
 
-import common.MemoryScan;
+import common.ScanUtility;
 
 import java.math.BigInteger;
 import java.util.Random;
@@ -8,7 +8,7 @@ import java.util.Random;
 public class StaticFactoryMethod {
 
     public static void main(String[] args) {
-        MemoryScan.startScan();
+        ScanUtility.startMemoryScan();
 
         // static method
         int sum = StaticCalcImpl.sum(10, 20);
@@ -25,7 +25,7 @@ public class StaticFactoryMethod {
         System.out.println("bigInteger1 = " + bigInteger1);
         System.out.println("bigInteger2 = " + bigInteger2);
 
-        MemoryScan.endScan();
+        ScanUtility.endMemoryScan();
     }
 
 }
