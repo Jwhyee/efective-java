@@ -8,7 +8,7 @@
 | "  |  아이템4  | 인스턴스화를 막으려거든 private 생성자를 사용하라.  | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item4/Item4.md)   | 2023.07.09 |
 | "  |  아이템5  | 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라.   | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item5/Item5.md)   | 2023.07.09 |
 | "  |  아이템6  | 불필요한 객체 생성을 피하라.                 | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item6/Item6.md)   | 2023.07.09 |
-| "  |  아이템7  | ?                                | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item7/Item7.md)   | 2023.07.10 |
-| "  |  아이템8  | ?                                | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item8/Item8.md)   | 2023.07.11 |
-| "  |  아이템9  | ?                                | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item9/Item9.md)   | 2023.07.12 |
-| 3  | 아이템10  | ?                                | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter3/item10/Item10.md) | 2023.07.13 |
+| "  |  아이템7  | 다 쓴 객체 참조를 해제하라.                 | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item7/Item7.md)   | 2023.07.11 |
+| "  |  아이템8  | ?                                | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item8/Item8.md)   | 2023.07.12 |
+| "  |  아이템9  | ?                                | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item9/Item9.md)   | 2023.07.14 |
+| 3  | 아이템10  | ?                                | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter3/item10/Item10.md) | 2023.07.15 |
