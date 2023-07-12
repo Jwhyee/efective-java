@@ -10,8 +10,8 @@ public class Item8Main {
     void finalizerTest() throws InterruptedException {
         for (int i = 1; i <= 10; i++) {
             FinalizerTester t = new FinalizerTester(i);
-            System.gc();
         }
+        System.gc();
 
         Thread.sleep(2000);
     }

@@ -163,13 +163,7 @@ public class Room implements AutoCloseable {
 여기서 `numJunkPiles`를 `int`가 아닌 **네이티브 피어**를 가리키는 포인터를 담은
 `final long` 변수로 하는게 더 현실적이긴하다.
 
-> **네이티브 피어(native peer)란?** <br>
-> C/C++이나 어셈블리 프로그램을 컴파일한 기계어 프로그램를 지칭하는데
-> 이를 라이브러리로써 자바 피어가 실행할 수 있게 해주는 인터페이스를
-> JNI (Java Native Interface)라고 합니다.
-> 자바 피어가 로딩될 때 정적으로 System.loadLibrary() 메소드를 호출해
-> 네이티브 피어를 로딩하고 네이티브 메소드는 native 키워드를 사용해 호출하는 방식으로 사용합니다. <br>
-> [참고 링크](https://github.com/java-squid/effective-java/issues/8#issuecomment-698310315)
+> 네이티브 피어는 [아래](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item8/Item8.md#2-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%ED%94%BC%EC%96%B4%EC%99%80-%EC%97%B0%EA%B2%B0%EB%90%9C-%EA%B0%9D%EC%B2%B4) 설명을 확인해주세요.
 
 또한, `State` 인스턴스는 절대로 `Room` 인스턴스를 참조해서는 안 된다.
 만약 참조할 경우 순환 참조가 생겨 GC가 `Room` 인스턴스를 회수해갈 기회가 오지 않는다.
@@ -280,7 +274,16 @@ public class Item8Main {
 
 ### 2. 네이티브 피어와 연결된 객체
 
-네이티브 피어란, 일반 자바 객체가 네이티브 메소드를 통해 기능을 위임한 네이티브 메소드를 말한다.
+일반적으로 네이티브 피어는 일반 자바 객체가 네이티브 메소드를 통해 기능을 위임한 네이티브 메소드를 말한다.
+아래는 조금 더 자세한 내용이 있으며, 참고 링크 내부에 있는 Baeldung에서도 자세히 소개하고 있으니 한 번 확인해 보는 것이 좋을 것 같다!
+
+> **네이티브 피어(native peer)란?** <br>
+> C/C++이나 어셈블리 프로그램을 컴파일한 기계어 프로그램를 지칭하는데
+> 이를 라이브러리로써 자바 피어가 실행할 수 있게 해주는 인터페이스를
+> JNI (Java Native Interface)라고 합니다.
+> 자바 피어가 로딩될 때 정적으로 System.loadLibrary() 메소드를 호출해
+> 네이티브 피어를 로딩하고 네이티브 메소드는 native 키워드를 사용해 호출하는 방식으로 사용합니다. <br>
+> [참고 링크](https://github.com/java-squid/effective-java/issues/8#issuecomment-698310315)
 
 네이티브 피어는 자바 객체가 아니니 GC는 그 존재를 알아차리지 못한다.
 즉, 자바 피어를 회수할 때 네이티브 객체까지 회수하지 못한다는 것이다.
