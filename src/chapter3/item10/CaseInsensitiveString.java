@@ -11,7 +11,7 @@ public class CaseInsensitiveString {
 
     @Override
     public boolean equals(Object o) {
-        if (o instanceof CaseInsensitiveString) {
+        /*if (o instanceof CaseInsensitiveString) {
             return s.equalsIgnoreCase(
                     ((CaseInsensitiveString) o).s
             );
@@ -20,6 +20,10 @@ public class CaseInsensitiveString {
             return s.equalsIgnoreCase((String) o);
         }
         return false;
+        */
+
+        return o instanceof CaseInsensitiveString &&
+                ((CaseInsensitiveString) o).s.equalsIgnoreCase(s);
     }
 
     @Override
