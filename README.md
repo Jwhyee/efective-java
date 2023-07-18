@@ -11,7 +11,7 @@
 |          "          |  아이템7  | 다 쓴 객체 참조를 해제하라.                         | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item7/Item7.md)   |        2023.07.12         |
 |          "          |  아이템8  | finalizer와 cleaner 사용을 피하라.              | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item8/Item8.md)   |        2023.07.12         |
 |          "          |  아이템9  | try-finally보다는 try-with-resources를 사용하라. | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter2/item9/Item9.md)   |        2023.07.13         |
-|  3. 모든 객체의 공통 메소드   | 아이템10  | equals는 일반 규약을 지켜 재정의하라.                 | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter3/item10/Item10.md) |  2023.07.16 ~ 2023.07.19  |
+|  3. 모든 객체의 공통 메소드   | 아이템10  | equals는 일반 규약을 지켜 재정의하라.                 | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter3/item10/Item10.md) |  2023.07.16  |
 |          "          | 아이템11  | ?                                        | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter3/item11/Item11.md) |        2023.00.00         |
 |          "          | 아이템12  | ?                                        | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter3/item12/Item12.md) |        2023.00.00         |
 |          "          | 아이템13  | ?                                        | [링크](https://github.com/Jwhyee/effective-java/blob/master/src/chapter3/item13/Item13.md) |        2023.00.00         |
