@@ -464,6 +464,77 @@ public class ColorPoint {
 > null이 아닌 모든 참조 값 x, y에 대해,
 > x.equals(y)를 반복해서 호출하면 항상 true(혹은 false)를 반환한다.
 
+두 객체가 같다면(어느 하나 혹은 두 객체 모두가 수정되지 않는 한) 앞으로도 영원히 같아야한다는 뜻이다.
+
+가변 객체는 비교 시점에 따라 서로 다를 수도 혹은 같을 수도 있지만, 불변 객체는 한 번 다르면 끝까지 달라야한다.
+
+```java
+public record Post(int id, String title, String content) { }
+```
+
+불변 클래스와 유사한 `record` 타입을 이용해 `Post`를 생성한 뒤 테스트 해보겠다.
+
+```java
+@Test
+void finalClassTest() {
+    Post p1 = new PostRecord(1, "title", "content");
+    Post p2 = new PostRecord(1, "title", "content");
+
+    assertTrue(p1.equals(p2));
+}
+```
+
+`record` 타입은 `equals()`, `hashCode()`를 자동으로 재정의해주기 때문에 너무 당연한 이야기일 수도 있다.
+즉, 위 결과가 당연하듯이 불변 객체는 한 번 같으면 끝까지 같아야하고, 한 번 다르면 끝까지 달라야한다.
+
+**클래스가 불변이든 가변이든 `equals`의 판단에 신뢰할 수 없는 자원이 끼어들게 해서는 안 된다.**
+`java.net.URL`을 예시로 보면, `equals`에 URL과 매핑된 호스트의 IP 주소를 이용해 비교한다.
+호스트 이름을 IP 주소로 바꾸려면 네트워크를 통해야 하는데, 그 결과가 항상 같다고 보장할 수 없다.
+
+**equals()는 메모리에 존재하는 객체만을 사용한 결정적(deterministic) 계산만 수행해야 한다.**
+
 ### null-아님
 
 > null이 아닌 모든 참조 값 x에 대해, x.equals(null)은 false다.
+
+이름과 동일하게 모든 객체가 `null`과 같지 않아야 한다는 뜻이다.
+사실 아래 코드의 결과가 `true`면 굉장히 혼란스러울 것이다.
+
+```java
+o.equals(null) == true
+```
+
+그러면 `equals`에서 `null`에 대해 항상 검사하고 `false`를 반환을 해줘야할까?
+
+```java
+@Override
+public boolean equals(Object o) {
+    if(o == null)
+        return false;
+}
+```
+
+위와 같이 `null`을 검사하는 과정은 생각보다 쓸모 없다.
+차라리 아래 코드와 같이 `instanceof` 연산자를 통해 올바른 타입인지 확인하면 되기 때문이다.
+
+```java
+@Override
+public boolean equals(Object o) {
+    if(o instanceof Type)
+        return false;
+    Type t = (Type) o;
+}
+```
+
+## 정리
+
+위 내용들을 종합하면 양질의 `equals` 메소드 구현 방법을 알 수 있다.
+
+- == 연산자를 사용해 입력이 자기 자신의 참조인지 확인한다.
+- instanceof 연산자로 입력이 올바른 타입인지 확인한다.
+- 입력을 올바른 타입으로 형변환한다.
+- 입력 객체와 자기 자신의 대응되는 '핵심' 필드들이 모두 일치하는지 하나씩 검사한다.
+
+꼭 필요한 경우가 아니면 `equals`를 재정의하지 말자.
+`Object`에서 제공하는 `equals`가 우리가 원하는 비교를 정확히 수행해준다.
+재정의를 해야할 경우 위에서 본 규약을 확실히 지켜가며 비교하자!

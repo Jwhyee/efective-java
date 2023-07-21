@@ -94,4 +94,12 @@ public class RelationTest {
 
         assertTrue(Point.onUnitCircle(p));
     }
+
+    @Test
+    void finalClassTest() {
+        PostRecord p1 = new PostRecord(1, "title", "content");
+        PostRecord p2 = new PostRecord(1, "title", "content");
+
+        assertTrue(p1.equals(p2));
+    }
 }
